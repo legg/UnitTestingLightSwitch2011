@@ -1,19 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
 
 namespace UnitTestingLightSwitch2011.Entity
 {
+    /// <summary>
+    /// A product can be place on many orders provided they are available
+    /// </summary>
     public interface IProduct
     {
-        [Key]
-        [DataMember]
-        int ID { get; set; }
-        [DataMember]
-        string Name { get; set; }
-        [DataMember]
+        int Id { get; set; }
+        bool Available { get; set; }
         string Description { get; set; }
-        [DataMember]
-        IEnumerable<IOrderLine> OrderLines { get; set; }
+        string Name { get; set; }
+        IEnumerable<IOrder> Orders { get; }
     }
 }

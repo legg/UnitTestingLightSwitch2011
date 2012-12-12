@@ -55,7 +55,16 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IScreenValidationModel.cs" />
+    <Compile Include="CustomerValidationController.cs" />
+    <Compile Include="OrderScreenValidationController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnitTestingLightSwitch2011.Entity\UnitTestingLightSwitch2011.Entity.csproj">
+      <Project>{F0FFF1E5-05DC-45DC-8156-3271132D1B89}</Project>
+      <Name>UnitTestingLightSwitch2011.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>

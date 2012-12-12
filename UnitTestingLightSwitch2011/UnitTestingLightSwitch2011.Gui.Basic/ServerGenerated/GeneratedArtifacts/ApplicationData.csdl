@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Namespace="ApplicationData" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <Association Name="Order_Customer">
+    <End Role="Customer" Type="ApplicationData.Customer" Multiplicity="1" />
+    <End Role="Order" Type="ApplicationData.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Order_Customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Order_Product">
+    <End Role="Product" Type="ApplicationData.Product" Multiplicity="1" />
+    <End Role="Order" Type="ApplicationData.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Order_Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Available" Type="Boolean" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Orders" Relationship="ApplicationData.Order_Product" ToRole="Order" FromRole="Product" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Orders" Relationship="ApplicationData.Order_Customer" ToRole="Order" FromRole="Customer" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Order_Customer" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="Order_Product" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Customer" Relationship="ApplicationData.Order_Customer" ToRole="Customer" FromRole="Order" />
+    <NavigationProperty Name="Product" Relationship="ApplicationData.Order_Product" ToRole="Product" FromRole="Order" />
+  </EntityType>
+  <EntityContainer Name="ApplicationDataObjectContext">
+    <EntitySet Name="Products" EntityType="ApplicationData.Product" />
+    <EntitySet Name="Customers" EntityType="ApplicationData.Customer" />
+    <EntitySet Name="Orders" EntityType="ApplicationData.Order" />
+    <AssociationSet Name="Order_Customer" Association="ApplicationData.Order_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="Order_Product" Association="ApplicationData.Order_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

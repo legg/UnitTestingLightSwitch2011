@@ -4,16 +4,13 @@ using System.Runtime.Serialization;
 
 namespace UnitTestingLightSwitch2011.Entity
 {
+    /// <summary>
+    /// A customer can have many orders
+    /// </summary>
     public interface ICustomer
     {
-        [Key]
-        [DataMember]
-        int ID { get; set; }
-        [DataMember]
+        int Id { get; set; }
         string Name { get; set; }
-        [DataMember]
-        string Email { get; set; }
-        [DataMember]
-        IEnumerable<IOrder> Orders { get; set; }
+        IEnumerable<IOrder> Orders { get; }
     }
 }
