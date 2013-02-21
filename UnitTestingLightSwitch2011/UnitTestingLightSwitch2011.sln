@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingLightSwitch2011.
 EndProject
 Project("{ECD6D718-D1CF-4119-97F3-97C25A0DFBF9}") = "UnitTestingLightSwitch2011.Gui.Basic", "UnitTestingLightSwitch2011.Gui.Basic\UnitTestingLightSwitch2011.Gui.Basic.lsproj", "{A46DCDB1-B877-4534-9C83-9462253858A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingLightSwitch2011.Specification", "UnitTestingLightSwitch2011.Specification\UnitTestingLightSwitch2011.Specification.csproj", "{1F91B996-EEA6-4B0F-BCF9-E24ACC7A12B8}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = UnitTestingLightSwitch2011.vsmdi
@@ -70,6 +72,10 @@ Global
 		{923EEDB9-85A0-4302-8C21-98F91542264F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{923EEDB9-85A0-4302-8C21-98F91542264F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{923EEDB9-85A0-4302-8C21-98F91542264F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F91B996-EEA6-4B0F-BCF9-E24ACC7A12B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F91B996-EEA6-4B0F-BCF9-E24ACC7A12B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F91B996-EEA6-4B0F-BCF9-E24ACC7A12B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F91B996-EEA6-4B0F-BCF9-E24ACC7A12B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +86,6 @@ Global
 		{C84B250F-D98D-4E05-9204-7F9DF5DA21B5} = {938D99E9-BDC0-4EC3-9A27-359DBCC540F0}
 		{79431E37-4B2C-469B-B620-698721E8A02C} = {1D321253-1D15-4506-88D3-5AC326F89D8F}
 		{58DEBCBB-F90A-4FCA-929A-57B1B0A5758E} = {1D321253-1D15-4506-88D3-5AC326F89D8F}
+		{1F91B996-EEA6-4B0F-BCF9-E24ACC7A12B8} = {1D321253-1D15-4506-88D3-5AC326F89D8F}
 	EndGlobalSection
 EndGlobal

@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -117,6 +118,7 @@ namespace ApplicationData.Implementation
         private ObjectSet<Order> _Orders;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -144,11 +146,11 @@ namespace ApplicationData.Implementation
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -175,6 +177,7 @@ namespace ApplicationData.Implementation
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -229,6 +232,7 @@ namespace ApplicationData.Implementation
         partial void OnNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -255,6 +259,7 @@ namespace ApplicationData.Implementation
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -285,6 +290,7 @@ namespace ApplicationData.Implementation
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -387,6 +393,7 @@ namespace ApplicationData.Implementation
         partial void OnOrder_ProductChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -467,6 +474,7 @@ namespace ApplicationData.Implementation
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -497,6 +505,7 @@ namespace ApplicationData.Implementation
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -599,6 +608,7 @@ namespace ApplicationData.Implementation
         partial void OnDescriptionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -625,8 +635,10 @@ namespace ApplicationData.Implementation
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }
